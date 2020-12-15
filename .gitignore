@@ -1,5 +1,4 @@
-.clasp.json
-.nvmrc
-.idea/
-node_modules/
-dist/
+*.layout
+*.depend
+bin/
+obj/
