@@ -1,13 +1,15 @@
 #include <iostream>
-
+#include <string.h>
+#include "include/List.h"
 using namespace std;
+
+List appointments;
 
 void mainMune();
 void make();
 void cancel();
 void see();
 void edit();
-
 
 int main()
 {
@@ -36,7 +38,18 @@ void mainMune(){
 }
 
 void make(){
-    return;
+    int hour;
+    string name;
+    string nCode;
+    cout<<"Enter the hour: ";
+    cin>>hour;
+    cout<<"What is the patient full name: ";
+    cin.ignore();
+    getline(cin,name);
+    cout<<"Enter patient national code: ";
+    cin>>nCode;
+    appointments.addNode(hour,name,nCode);
+    appointments.printList();
 }
 void cancel(){
     return;
