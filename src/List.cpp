@@ -49,6 +49,21 @@ void List::delNode(string nCode){
     }
 }
 
+void List::findNode(string nCode){
+    curr = head;
+    if(head == NULL)
+        cout<<"this list is empty!"<<endl;
+    while(curr != NULL && curr->nCode != nCode)
+        curr = curr->next;
+    if(curr == NULL)
+        cout<<"there are no appointment for this national code ~> "<<nCode<<endl;
+    else{
+        cout<<curr->hour<<"\t"
+            <<curr->pName<<"\t"
+            <<curr->nCode<<endl;
+    }
+}
+
 void List::printList(){
     curr = head;
     while(curr != NULL){

@@ -21,6 +21,7 @@ public:
     List();
     void addNode(int hour,string pName,string nCode);
     void delNode(string nCode);
+    void findNode(string nCode);
     void printList();
 
 };
