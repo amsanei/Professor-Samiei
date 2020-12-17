@@ -50,9 +50,15 @@ void make(){
     cin>>nCode;
     appointments.addNode(hour,name,nCode);
     appointments.printList();
+    mainMune();
 }
 void cancel(){
-    return;
+    string nCode;
+    cout<<"Enter your National code(no space,no hyphen): ";
+    cin>>nCode;
+    appointments.delNode(nCode);
+    appointments.printList();
+    mainMune();
 }
 void see(){
     return;
