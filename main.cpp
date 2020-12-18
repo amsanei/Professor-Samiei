@@ -68,5 +68,12 @@ void see(){
     mainMune();
 }
 void edit(){
+    string nCode;
+    cout<<"Enter your National code(no space,no hyphen): ";
+    cin>>nCode;
+    appointments.findNode(nCode);
+    appointments.editNode();
+    appointments.printList();
+    mainMune();
     return;
 }

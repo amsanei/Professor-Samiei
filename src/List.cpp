@@ -64,6 +64,13 @@ void List::findNode(string nCode){
     }
 }
 
+void List::editNode(){
+    int newHour;
+    cout<<"enter new hour: ";
+    cin>>newHour;
+    curr->hour = newHour;
+}
+
 void List::printList(){
     curr = head;
     while(curr != NULL){
