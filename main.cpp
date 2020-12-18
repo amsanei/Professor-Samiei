@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include "include/List.h"
+#include "include/setColor.h"
 using namespace std;
 
 List appointments;
@@ -18,14 +19,36 @@ int main()
 }
 
 void mainMune(){
+    system("cls");
     int choice;
-    cout<<"----> Welcome To The Professor Samiei's office <----\n";
+    SetColor(12);
+    cout<<"---->";
+    SetColor(7);
+    cout<<" Welcome To The Professor Samiei's office ";
+    SetColor(12);
+    cout<<"<----\n";
+    SetColor(7);
     cout<<"What we can do:\n";
-    cout<<"\t1.make an appointment"<<endl
-        <<"\t2.cancel an appointment"<<endl
-        <<"\t3.see an appointment's details"<<endl
-        <<"\t4.edit an appointment"<<endl
-        <<"\t5.Exit"<<endl;
+    SetColor(12);
+    cout<<"\t1.";
+    SetColor(7);
+    cout<<"make an appointment"<<endl;
+    SetColor(12);
+    cout<<"\t2.";
+    SetColor(7);
+    cout<<"cancel my appointment"<<endl;
+    SetColor(12);
+    cout<<"\t3.";
+    SetColor(7);
+    cout<<"show my appointment's details"<<endl;
+    SetColor(12);
+    cout<<"\t4.";
+    SetColor(7);
+    cout<<"change my appointment's hour"<<endl;
+    SetColor(12);
+    cout<<"\t5.";
+    SetColor(7);
+    cout<<"Exit"<<endl;
     cout<<"------------"<<endl<<"Enter your choice number(1-5): ";
     cin>>choice;
     switch(choice){
@@ -38,6 +61,7 @@ void mainMune(){
 }
 
 void make(){
+    system("cls");
     int hour;
     string name;
     string nCode;
@@ -50,30 +74,40 @@ void make(){
     cin>>nCode;
     appointments.addNode(hour,name,nCode);
     appointments.printList();
+    cout<<endl;
+    system("pause");
     mainMune();
 }
 void cancel(){
+    system("cls");
     string nCode;
     cout<<"Enter your National code(no space,no hyphen): ";
     cin>>nCode;
     appointments.delNode(nCode);
     appointments.printList();
+    cout<<endl;
+    system("pause");
     mainMune();
 }
 void see(){
+    system("cls");
     string nCode;
     cout<<"Enter your National code(no space,no hyphen): ";
     cin>>nCode;
     appointments.findNode(nCode);
+    cout<<endl;
+    system("pause");
     mainMune();
 }
 void edit(){
+    system("cls");
     string nCode;
     cout<<"Enter your National code(no space,no hyphen): ";
     cin>>nCode;
     appointments.findNode(nCode);
     appointments.editNode();
     appointments.printList();
+    cout<<endl;
+    system("pause");
     mainMune();
-    return;
 }
