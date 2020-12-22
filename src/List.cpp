@@ -77,10 +77,14 @@ void List::editNode(){
 
 void List::printList(){
     curr = head;
+    if(head == NULL){
+        cout<<"this list is empty!"<<endl;
+        return;
+    }
     while(curr != NULL){
-        cout<<"Your appointment time ~> "<<curr->hour<<endl
-            <<"Your Name ~> "<<curr->pName<<endl
-            <<"Your National code ~> "<<curr->nCode<<endl;
+        cout<<curr->hour<<"\t"
+            <<curr->pName<<"\t"
+            <<curr->nCode<<endl;
         curr = curr->next;
     }
 }

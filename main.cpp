@@ -11,6 +11,7 @@ void make();
 void cancel();
 void see();
 void edit();
+void printList();
 
 int main()
 {
@@ -48,15 +49,21 @@ void mainMune(){
     SetColor(12);
     cout<<"\t5.";
     SetColor(7);
+    cout<<"today's appointment list"<<endl;
+    SetColor(12);
+    cout<<"\t6.";
+    SetColor(7);
     cout<<"Exit"<<endl;
     cout<<"------------"<<endl<<"Enter your choice number(1-5): ";
     cin>>choice;
     switch(choice){
-        case 1 : make(); return;
-        case 2 : cancel(); return;
-        case 3 : see(); return;
-        case 4 : edit(); return;
-        case 5 : exit(1);
+        case 1 : make(); break;
+        case 2 : cancel(); break;
+        case 3 : see(); break;
+        case 4 : edit(); break;
+        case 5 : printList(); break;
+        case 6 : exit(1);
+
     }
 }
 
@@ -73,8 +80,9 @@ void make(){
     cout<<"Enter patient national code: ";
     cin>>nCode;
     appointments.addNode(hour,name,nCode);
-    appointments.printList();
-    cout<<endl;
+    SetColor(10);
+    cout<<"We'll meet you at "<<hour<<" o'clock ,please don't be late <3.\n"<<endl;
+    SetColor(7);
     system("pause");
     mainMune();
 }
@@ -84,7 +92,6 @@ void cancel(){
     cout<<"Enter your National code(no space,no hyphen): ";
     cin>>nCode;
     appointments.delNode(nCode);
-    appointments.printList();
     cout<<endl;
     system("pause");
     mainMune();
@@ -106,6 +113,17 @@ void edit(){
     cin>>nCode;
     appointments.findNode(nCode);
     appointments.editNode();
+    cout<<endl;
+    system("pause");
+    mainMune();
+}
+
+void printList(){
+    system("cls");
+    SetColor(12);
+    cout<<"HOUR\tNAME\tNATINOAL CODE\n";
+    cout<<"-------------------------------\n";
+    SetColor(7);
     appointments.printList();
     cout<<endl;
     system("pause");
