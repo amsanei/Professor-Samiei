@@ -44,30 +44,31 @@ void List::delNode(string nCode){
             temp = NULL;
         }
         delete delptr;
-        cout<<"the appointment for this national code, canceled"<<endl;
-
+        cout<<"your appointment is canceled successfully"<<endl;
     }
 }
 
 void List::findNode(string nCode){
     curr = head;
-    if(head == NULL)
+    if(head == NULL){
         cout<<"this list is empty!"<<endl;
+        return;
+    }
     while(curr != NULL && curr->nCode != nCode)
         curr = curr->next;
     if(curr == NULL)
         cout<<"there are no appointment for this national code ~> "<<nCode<<endl;
     else{
-        cout<<curr->hour<<"\t"
-            <<curr->pName<<"\t"
-            <<curr->nCode<<endl;
+        cout<<"Your appointment time ~> "<<curr->hour<<endl
+            <<"Your Name ~> "<<curr->pName<<endl
+            <<"Your National code ~> "<<curr->nCode<<endl;
     }
 }
 
 void List::editNode(){
     if(curr != NULL){
         int newHour;
-        cout<<"enter new hour: ";
+        cout<<"Enter new hour: ";
         cin>>newHour;
         curr->hour = newHour;
     }else
@@ -77,9 +78,9 @@ void List::editNode(){
 void List::printList(){
     curr = head;
     while(curr != NULL){
-        cout<<curr->hour<<"\t"
-            <<curr->pName<<"\t"
-            <<curr->nCode<<endl;
+        cout<<"Your appointment time ~> "<<curr->hour<<endl
+            <<"Your Name ~> "<<curr->pName<<endl
+            <<"Your National code ~> "<<curr->nCode<<endl;
         curr = curr->next;
     }
 }
